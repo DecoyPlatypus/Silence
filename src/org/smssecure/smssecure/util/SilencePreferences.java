@@ -95,6 +95,8 @@ public class SilencePreferences {
   private static final String MEDIA_DOWNLOAD_PREF              = "pref_media_download";
   private static final String MEDIA_DOWNLOAD_ROAMING_PREF      = "pref_media_download_roaming";
 
+  public static final String SYSTEM_EMOJI_PREF                 = "pref_system_emoji";
+
   public static NotificationPrivacyPreference getNotificationPrivacy(Context context) {
     return new NotificationPrivacyPreference(getStringPreference(context, NOTIFICATION_PRIVACY_PREF, "all"));
   }
@@ -516,6 +518,10 @@ public class SilencePreferences {
 
   public static int getThreadTrimLength(Context context) {
     return Integer.parseInt(getStringPreference(context, THREAD_TRIM_LENGTH, "500"));
+  }
+
+  public static boolean isSystemEmojiPreferred(Context context) {
+    return getBooleanPreference(context, SYSTEM_EMOJI_PREF, false);
   }
 
   public static boolean isMediaDownloadAllowed(Context context) {

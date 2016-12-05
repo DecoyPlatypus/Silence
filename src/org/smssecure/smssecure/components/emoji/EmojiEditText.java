@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 
 import org.smssecure.smssecure.R;
 import org.smssecure.smssecure.components.emoji.EmojiProvider.EmojiDrawable;
+import org.smssecure.smssecure.util.SilencePreferences;
 
 
 public class EmojiEditText extends AppCompatEditText {
@@ -24,8 +25,10 @@ public class EmojiEditText extends AppCompatEditText {
   }
 
   public EmojiEditText(Context context, AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
-    setFilters(appendEmojiFilter(this.getFilters()));
+      super(context, attrs, defStyleAttr);
+      if (!SilencePreferences.isSystemEmojiPreferred(getContext())) {
+          setFilters(appendEmojiFilter(this.getFilters()));
+      }
   }
 
   public void insertEmoji(String emoji) {

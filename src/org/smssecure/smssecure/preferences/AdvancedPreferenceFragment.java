@@ -22,6 +22,8 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment {
 
   private static final String SUBMIT_DEBUG_LOG_PREF = "pref_submit_debug_logs";
 
+  private static final String SYSTEM_EMOJI_PREF     = SilencePreferences.SYSTEM_EMOJI_PREF;
+
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
